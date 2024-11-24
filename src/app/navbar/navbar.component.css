@@ -1,0 +1,64 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    box-shadow:  0 0px 25px -4px rgb(229, 227, 227);
+    padding-inline: 30px;
+}
+
+nav h1 {
+    /*  */
+    font-family: "Ga Maamli", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 30px;
+}
+
+nav .search {
+  display: flex;
+  align-items: center;
+  position: relative;
+    
+}
+
+nav .search span {
+    font-size: 30px;
+    position: absolute;
+    left: 0px;
+}
+
+nav input {
+    width: 250px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid grey;
+    padding-left: 30px;
+    font-family: "Bokor", system-ui;
+    color: rgb(75, 74, 74);
+   
+}
+
+nav input::placeholder {
+    font-family: "Bokor", system-ui;
+    letter-spacing: 0.6px;
+
+}
+
+nav .account {
+    display: flex;
+    gap: 10px;
+}
+
+nav .account button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: "Ga Maamli", sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
