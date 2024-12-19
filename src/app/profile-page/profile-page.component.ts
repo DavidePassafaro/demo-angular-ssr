@@ -14,17 +14,14 @@ export class ProfilePageComponent implements OnInit {
   ngOnInit(): void {
     this.getProfileData()
   }
-  private accessToken = sessionStorage.getItem("token")
+
   private userId: any;
 
 
   getProfileData() {
-    const headers = new HttpHeaders({
-      "accept": "application/json",
-      "Authorization": `Bearer ${this.accessToken}`
-    })
+   
 
-    this.api.profileInfo(headers).subscribe({
+    this.api.profileInfo().subscribe({
       next: (data:any) => {
         console.log(data);
         this.userId = data._id

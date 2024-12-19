@@ -6,10 +6,10 @@
   </div>
 
   <div class="account">
-    @if (false) {
+    @if (true) {
     <button><i class="fa-regular fa-id-card"></i> Create Account</button>
-    <button>
-      <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i> Sign in
+    <button (click)="signInForm()">
+      <i  class="fa-solid fa-person-walking-dashed-line-arrow-right"></i> Sign in
     </button>
     } @else {
     <button><i class="fa-solid fa-id-badge"></i> Irakli</button>
@@ -17,3 +17,8 @@
     }
   </div>
 </nav>
+
+@if (isSignShow) {
+  <app-sign-in (closeEmit)="closeForm($event)"></app-sign-in>
+}
+

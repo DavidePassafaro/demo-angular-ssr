@@ -12,15 +12,19 @@ export class ApiAreaService {
     return this.http.post("https://api.everrest.educata.dev/auth/sign_in", body)
   }
 
-  profileInfo(token: any) {
-    return this.http.get("https://api.everrest.educata.dev/auth", {headers: token})
+  profileInfo() {
+    return this.http.get("https://api.everrest.educata.dev/auth")
   }
 
-  createCart(body: any, token: any) {
-    return this.http.post("https://api.everrest.educata.dev/shop/cart/product", body, {headers: token})
+  createCart(body: any) {
+    return this.http.post("https://api.everrest.educata.dev/shop/cart/product", body)
   }
 
-  getCart(token: any) {
-    return this.http.get("https://api.everrest.educata.dev/shop/cart", {headers: token})
+  addtoCart(body: any,) {
+    return this.http.patch("https://api.everrest.educata.dev/shop/cart/product", body )
+  }
+
+  getCart() {
+    return this.http.get("https://api.everrest.educata.dev/shop/cart")
   }
 }

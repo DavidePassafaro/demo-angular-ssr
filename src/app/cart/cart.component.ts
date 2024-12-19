@@ -18,11 +18,7 @@ export class CartComponent implements OnInit {
 
   private productId:any;
   private token = sessionStorage.getItem("token")
-  private headers: HttpHeaders = new HttpHeaders({
-    'accept' : 'application/json' ,
-    'Authorization': `Bearer ${this.token}` ,
-    'Content-Type': 'application/json' 
-  })
+ 
 
   createCart() {
 
@@ -31,7 +27,7 @@ export class CartComponent implements OnInit {
       quantity: 1
     }
     
-    this.api.createCart(cartData, this.headers).subscribe({
+    this.api.createCart(cartData,).subscribe({
       next: (data:any) => {
         console.log(data);
         
@@ -44,7 +40,7 @@ export class CartComponent implements OnInit {
   }
 
   getCart() {
-    this.api.getCart(this.headers).subscribe({
+    this.api.getCart().subscribe({
       next: (data:any) => {
         console.log(data);
         
