@@ -22,7 +22,7 @@
             <p>Forgot password?</p>
             <button [disabled]="signInForm.invalid" type="submit">Sign In</button>
             
-            <h3>Don`t have an account? <span>Signup now</span></h3>
+            <h3>Don`t have an account? <span (click)="change()">Signup now</span></h3>
         </form>
         <div class="rightBack">
             <h1>Join us with our Account</h1>

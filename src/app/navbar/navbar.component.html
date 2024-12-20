@@ -6,19 +6,30 @@
   </div>
 
   <div class="account">
-    @if (true) {
-    <button><i class="fa-regular fa-id-card"></i> Create Account</button>
+    @if (!isLoggedIn) {
+    <button (click)="showRegister()">
+      <i class="fa-regular fa-id-card"></i> Create Account
+    </button>
     <button (click)="signInForm()">
-      <i  class="fa-solid fa-person-walking-dashed-line-arrow-right"></i> Sign in
+      <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i> Sign in
     </button>
     } @else {
-    <button><i class="fa-solid fa-id-badge"></i> Irakli</button>
+    <button><img [src]="userImg" alt="">{{userName}}</button>
     <button><i class="fa-solid fa-right-to-bracket"></i> Sign Out</button>
     }
   </div>
 </nav>
 
 @if (isSignShow) {
-  <app-sign-in (closeEmit)="closeForm($event)"></app-sign-in>
+<app-sign-in
+  (closeEmit)="closeForm($event)"
+  (changeEmit)="showRegister()"
+  (loggedEmit)="loggedIn($event)"
+  (loggedInfo)="profileInfoNav($event)"
+></app-sign-in>
+} @if (isRegisterShow) {
+<app-sign-up
+  (closeEmit)="closeRegister($event)"
+ 
+></app-sign-up>
 }
-

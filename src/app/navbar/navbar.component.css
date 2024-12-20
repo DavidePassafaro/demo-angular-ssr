@@ -46,6 +46,12 @@ nav input::placeholder {
 
 }
 
+button img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
 nav .account {
     display: flex;
     gap: 10px;
