@@ -6,7 +6,7 @@ import { HttpHeaders } from '@angular/common/http';
 
 @Component({
     selector: 'app-home',
-    imports: [SidebarComponent, SignInComponent],
+    imports: [SidebarComponent],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
 })

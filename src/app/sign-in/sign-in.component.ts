@@ -6,16 +6,16 @@ import {
   Validators,
 } from '@angular/forms';
 import { ApiAreaService } from '../services/api-area.service';
-
+import { SsrCookieService } from 'ngx-cookie-service-ssr';
 
 @Component({
-    selector: 'app-sign-in',
-    imports: [ReactiveFormsModule],
-    templateUrl: './sign-in.component.html',
-    styleUrl: './sign-in.component.css'
+  selector: 'app-sign-in',
+  imports: [ReactiveFormsModule],
+  templateUrl: './sign-in.component.html',
+  styleUrl: './sign-in.component.css',
 })
 export class SignInComponent {
-  constructor(private api: ApiAreaService, ) {}
+  constructor(private api: ApiAreaService, public _cookie: SsrCookieService) {}
   @Output() closeEmit: EventEmitter<boolean> = new EventEmitter();
   @Output() changeEmit: EventEmitter<boolean> = new EventEmitter();
   @Output() loggedEmit: EventEmitter<boolean> = new EventEmitter();
@@ -35,7 +35,7 @@ export class SignInComponent {
     this.api.signIn(this.signInForm.value).subscribe({
       next: (data: any) => {
         this.accessToken = data.access_token;
-        // this._cookie.set('user', this.accessToken, 0.4);
+        this._cookie.set('user', this.accessToken, 0.4);
         this.errAlert = false;
         this.successLogin = true;
         this.api.profileInfo().subscribe((data: any) => {
