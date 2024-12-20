@@ -3,11 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { ApiAreaService } from '../services/api-area.service';
 
 @Component({
-  selector: 'app-profile-page',
-  standalone: true,
-  imports: [],
-  templateUrl: './profile-page.component.html',
-  styleUrl: './profile-page.component.css'
+    selector: 'app-profile-page',
+    imports: [],
+    templateUrl: './profile-page.component.html',
+    styleUrl: './profile-page.component.css'
 })
 export class ProfilePageComponent implements OnInit {
   constructor(private api: ApiAreaService) {}

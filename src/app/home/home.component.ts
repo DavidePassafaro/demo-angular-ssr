@@ -5,11 +5,10 @@ import { ApiAreaService } from '../services/api-area.service';
 import { HttpHeaders } from '@angular/common/http';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [SidebarComponent, SignInComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+    selector: 'app-home',
+    imports: [SidebarComponent, SignInComponent],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit {
   constructor(private api: ApiAreaService) {}

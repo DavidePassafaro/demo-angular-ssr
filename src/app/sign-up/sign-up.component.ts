@@ -8,11 +8,10 @@ import {
 import { ApiAreaService } from '../services/api-area.service';
 
 @Component({
-  selector: 'app-sign-up',
-  standalone: true,
-  imports: [ReactiveFormsModule],
-  templateUrl: './sign-up.component.html',
-  styleUrl: './sign-up.component.css',
+    selector: 'app-sign-up',
+    imports: [ReactiveFormsModule],
+    templateUrl: './sign-up.component.html',
+    styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent {
   constructor(private service: ApiAreaService) {}

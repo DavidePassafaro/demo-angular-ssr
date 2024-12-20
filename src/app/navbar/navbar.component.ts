@@ -3,11 +3,10 @@ import { SignInComponent } from "../sign-in/sign-in.component";
 import { SignUpComponent } from "../sign-up/sign-up.component";
 
 @Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [SignInComponent, SignUpComponent],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+    selector: 'app-navbar',
+    imports: [SignInComponent, SignUpComponent],
+    templateUrl: './navbar.component.html',
+    styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
 
