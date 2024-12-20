@@ -1,5 +1,6 @@
 .sidebar {
-    width: 250px;
+    width: 220px;
     height: calc(100vh - 60px);
-    background-color: grey;
+    border-right: 1px solid rgb(221, 220, 220); 
+    padding: 15px;               
 }

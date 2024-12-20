@@ -44,6 +44,7 @@ export class SignInComponent {
             firstName: data.firstName,
             avatar: data.avatar,
           });
+          sessionStorage.setItem("logged", "user")
         });
 
         if (this.successLogin) {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SignInComponent } from "../sign-in/sign-in.component";
 import { SignUpComponent } from "../sign-up/sign-up.component";
 
@@ -8,13 +8,16 @@ import { SignUpComponent } from "../sign-up/sign-up.component";
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css'
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  ngOnInit(): void {
+   this.isLoggedIn = sessionStorage.getItem("logged")
+  }
 
   public isSignShow: boolean = false
   public isRegisterShow: boolean = false
-  public isLoggedIn: boolean = false
-  public userImg: any;
-  public userName: any;
+  public isLoggedIn: any;
+  public userImg: any = sessionStorage.getItem("profileImg");
+  public userName: any = sessionStorage.getItem("profileName");
 
   signInForm() {
     this.isSignShow = true
