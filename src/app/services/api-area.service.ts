@@ -28,7 +28,7 @@ export class ApiAreaService {
     return this.http.patch("https://api.everrest.educata.dev/shop/cart/product", body )
   }
 
-  getCart() {
-    return this.http.get("https://api.everrest.educata.dev/shop/cart")
+  getCardsonHome() {
+    return this.http.get('https://api.everrest.educata.dev/shop/products/all?page_size=10')
   }
 }

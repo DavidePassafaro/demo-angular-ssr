@@ -12,7 +12,7 @@ export class CartComponent implements OnInit {
   constructor(private api: ApiAreaService) {}
   ngOnInit(): void {
     // this.createCart()
-    this.getCart()
+    // this.getCart()
   }
 
   private productId:any;
@@ -38,17 +38,17 @@ export class CartComponent implements OnInit {
     })
   }
 
-  getCart() {
-    this.api.getCart().subscribe({
-      next: (data:any) => {
-        console.log(data);
+  // getCart() {
+  //   this.api.getCart().subscribe({
+  //     next: (data:any) => {
+  //       console.log(data);
         
-      },
-      error: (err) => {
-        console.log(err);
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
         
-      }
-    })
-  }
+  //     }
+  //   })
+  // }
 
 }

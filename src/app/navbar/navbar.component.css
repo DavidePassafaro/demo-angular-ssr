@@ -9,6 +9,13 @@ nav {
     top: 0;
     width: 100%;
     backdrop-filter: brightness(90%) blur(5px);
+    transition: 0.5s;
+}
+
+.navbarSolid {
+    background-color: white;
+    box-shadow:  0 0px 25px -4px rgb(229, 227, 227);
+    z-index: 1;
 }
 
 nav h1 {
