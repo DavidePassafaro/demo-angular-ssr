@@ -4,3 +4,98 @@
     border-right: 1px solid rgb(221, 220, 220); 
     padding: 15px;               
 }
+
+.shopInfos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 70px 0;
+}
+
+.shopInfos .card {
+    width: 300px;
+    height: 200px;
+    background-color: #04212F;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 15px;
+    padding: 40px;
+    font-family: "Exo", serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.shopInfos .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px 1px #04212F;
+}
+
+.shopInfos .card i {
+    font-size: 40px;
+}
+
+
+
+.arrivals {
+    
+    height: 400px;
+    background-image: url("/arrivals.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: right;
+   
+   
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: white;
+  
+}
+
+.infos {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: start;
+}
+
+.infos h1 {
+    font-size: 50px;
+    font-family: "Bilbo Swash Caps", serif;
+    letter-spacing: 1px;
+    color: red;
+}
+
+
+.infos p {
+    font-family: "Bilbo Swash Caps", serif;
+    font-size: 20px;
+}
+
+
+.infos button {
+    padding: 10px 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(233, 22, 22);
+    color: white;
+    font-family: "Exo", serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.infos button:hover {
+    background-color: red;
+    box-shadow: 0 0 5px 0px red;
+}

@@ -3,8 +3,12 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    box-shadow:  0 0px 25px -4px rgb(229, 227, 227);
+    /* box-shadow:  0 0px 25px -4px rgb(229, 227, 227); */
     padding-inline: 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    backdrop-filter: brightness(90%) blur(5px);
 }
 
 nav h1 {
@@ -37,6 +41,7 @@ nav input {
     padding-left: 30px;
     font-family: "Bokor", system-ui;
     color: rgb(75, 74, 74);
+    background-color: transparent;
    
 }
 

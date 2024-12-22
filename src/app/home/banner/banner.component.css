@@ -1,0 +1,57 @@
+section {
+    
+    height: 550px;
+    background-image: url("/online-clothing-shopping.webp");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 0 -150px;
+   
+   
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    color: white;
+  
+}
+
+.infos {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: start;
+}
+
+.infos h1 {
+    font-size: 50px;
+    font-family: "Ga Maamli", sans-serif;
+}
+
+
+.infos p {
+    font-family: "Exo", serif;
+}
+.infos h1::first-line {
+    color: rgb(233, 22, 22);
+}
+
+.infos button {
+    padding: 10px 50px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(233, 22, 22);
+    color: white;
+    font-family: "Exo", serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.infos button:hover {
+    background-color: red;
+    box-shadow: 0 0 5px 0px red;
+}
