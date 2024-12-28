@@ -3,10 +3,11 @@ import { SignInComponent } from "../sign-in/sign-in.component";
 import { SignUpComponent } from "../sign-up/sign-up.component";
 import { Observable } from 'rxjs';
 import { ScrollingDirective } from '../../directives/scrolling.directive';
+import { RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-navbar',
-    imports: [SignInComponent, SignUpComponent, ScrollingDirective],
+    imports: [SignInComponent, SignUpComponent, ScrollingDirective, RouterModule],
     templateUrl: './navbar.component.html',
     styleUrl: './navbar.component.css'
 })

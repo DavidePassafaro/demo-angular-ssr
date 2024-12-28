@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiAreaService } from '../../services/api-area.service';
+import { Product } from '../../../interfaces/product';
+import { AllProductArea } from '../../../interfaces/all-product-area';
+import { ProductsAreaService } from '../../services/products-area.service';
 
 @Component({
   selector: 'app-several-products',
@@ -8,17 +11,20 @@ import { ApiAreaService } from '../../services/api-area.service';
   styleUrl: './several-products.component.css'
 })
 export class SeveralProductsComponent implements OnInit {
-  constructor(private service: ApiAreaService) {}
+  constructor(private service: ProductsAreaService) {}
   ngOnInit(): void {
     this.showCards()
   }
 
-  protected productList: any[] = []
+  protected productList!: Product[];
 
   showCards() {
-    this.service.getCardsonHome().subscribe({
-      next: (data: any) => {
-        this.productList = data.products
+    this.service.getCardsforHome().subscribe({
+      next: (data: AllProductArea) => {
+       this.productList = data.products
+       
+        
+        
       },
       error: (error) => {
         alert(error)

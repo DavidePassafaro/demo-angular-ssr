@@ -24,39 +24,9 @@ nav h1 {
     font-weight: 500;
     letter-spacing: 0.5px;
     font-size: 30px;
+    cursor: pointer;
 }
 
-nav .search {
-  display: flex;
-  align-items: center;
-  position: relative;
-    
-}
-
-nav .search span {
-    font-size: 30px;
-    position: absolute;
-    left: 0px;
-}
-
-nav input {
-    width: 250px;
-    height: 30px;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid grey;
-    padding-left: 30px;
-    font-family: "Bokor", system-ui;
-    color: rgb(75, 74, 74);
-    background-color: transparent;
-   
-}
-
-nav input::placeholder {
-    font-family: "Bokor", system-ui;
-    letter-spacing: 0.6px;
-
-}
 
 button img {
     width: 25px;

@@ -1,0 +1,52 @@
+<header></header>
+<article>
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <section class="container">
+    <main>
+      @for (item of productList; track $index) {
+      <div class="card">
+        <img
+          [src]="!item.images[0] ? altImage : item.images[0]"
+          alt="product"
+        />
+        <h4>{{ item.title }}</h4>
+        <h2>
+          ${{ item.price.current }} <sub>${{ item.price.beforeDiscount }}</sub>
+        </h2>
+        <p>
+          {{ item.description }}
+        </p>
+        <div class="hiddenPart">
+          <button><i class="fa-solid fa-cart-shopping"></i> Add To cart</button>
+        </div>
+      </div>
+      }
+    </main>
+    <div class="bottomArea">
+      <span></span>
+      <div class="pages">
+        @for (item of pageList; track $index) {
+        <button
+          [class.current]="item == currentPage"
+          (click)="showProducts(item, pageSize)"
+        >
+          {{ item }}
+        </button>
+        }
+      </div>
+      <div class="sizePerPage">
+        <label for="">Items per Page:</label>
+        <select (change)="changePageSize()" [(ngModel)]="pageSize">
+          <option value="">All</option>
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+          <option value="25">25</option>
+        </select>
+      </div>
+    </div>
+  </section>
+</article>
