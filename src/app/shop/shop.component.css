@@ -27,6 +27,7 @@ section {
   transition: 1s;
   margin: 20px 0;
   gap: 20px;
+  padding-inline: 5px;
 }
 
 .categories {
@@ -43,7 +44,7 @@ section {
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background-color: #B3343D;
+  background-color: #5DC5C4;
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: 400;

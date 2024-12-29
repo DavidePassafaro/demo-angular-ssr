@@ -4,7 +4,8 @@
     <app-sidebar 
     (sendBrands)="switchBrands($event)"
     (sendAllProducts)="showProducts(1, pageSize)"
-   
+    (sendFilterData)="filterProducts($event)"
+    (sendSearchInfo)="search($event)"
     ></app-sidebar>
   </div>
   <section class="container">
@@ -52,6 +53,7 @@
         }
         <button [disabled]="currentPage === pageList.length" (click)="nextPage()" class="arrows"> next &rarr;</button>
       </div>
+      @if (productList.length > 10) {
       <div class="sizePerPage">
         <label for="">Items per Page:</label>
         <select (change)="changePageSize()" [(ngModel)]="pageSize">
@@ -63,6 +65,10 @@
           <option value="25">25</option>
         </select>
       </div>
+    }
+    @else { 
+      <span></span>
+    }
     </div>
   </section>
 </article>
