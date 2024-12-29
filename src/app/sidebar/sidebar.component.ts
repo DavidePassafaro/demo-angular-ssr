@@ -13,14 +13,15 @@ export class SidebarComponent implements OnInit {
   constructor(private productApi: ProductsAreaService) {}
   @Output() sendBrands: EventEmitter<AllProductArea> = new EventEmitter()
   @Output() sendAllProducts: EventEmitter<AllProductArea> = new EventEmitter()
+  @Output() sendCategoryData: EventEmitter<AllProductArea> = new EventEmitter()
 
 
   ngOnInit(): void {
     this.getBrandsList()
-    this.getCategoriesList()
+  
   }
 
-  protected categories:any
+
   protected brands: string[] = []
 
   showAll() {
@@ -36,18 +37,15 @@ export class SidebarComponent implements OnInit {
     })
   }
 
-  getCategoriesList() {
-    this.productApi.getCategories().subscribe((list:any) => {
-      this.categories = list
-      
-    })
-  }
+ 
 
   getBrandData(brand: string) {
     this.productApi.getExactBrandData(brand).subscribe((data: AllProductArea) => {
       this.sendBrands.emit(data)
     })
   }
+
+  
 
 
 

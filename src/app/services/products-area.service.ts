@@ -13,8 +13,8 @@ export class ProductsAreaService {
     return this.http.get("https://api.everrest.educata.dev/shop/products/categories")
   }
 
-  getListByCategory(id: any) {
-    return this.http.get(`https://api.everrest.educata.dev/shop/products/categories/${id}`)
+  getListByCategory(id: any, page:any, size :any) {
+    return this.http.get(`https://api.everrest.educata.dev/shop/products/category/${id}?page_index=${page}&page_size=${size}`)
   }
 
  

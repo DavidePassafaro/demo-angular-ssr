@@ -4,17 +4,7 @@
     <span class="material-symbols-outlined"> manage_search </span>
     <input type="search" placeholder="Search here..." />
  </div>
-  <div class="categories">
-    <h1>Categories</h1>
-    <ul>
-      @for (item of categories; track $index) {
-      <li>
-        <img [src]="item.image" alt="" />
-        <h4>{{ item.name }}</h4>
-      </li>
-      }
-    </ul>
-  </div>
+ 
   <div class="brands">
     <h1>Brands</h1>
     <ul>

@@ -4,9 +4,20 @@
     <app-sidebar 
     (sendBrands)="switchBrands($event)"
     (sendAllProducts)="showProducts(1, pageSize)"
+   
     ></app-sidebar>
   </div>
   <section class="container">
+   
+      <div  class="categories">
+        @for (item of categories; track $index) {
+        <button>
+          <img [src]="item.image" alt="" />
+          <h4 (click)="showByCategory(item.id, currentPage)">{{ item.name }}</h4>
+        </button>
+        }
+      </div>
+   
     <main>
       @for (item of productList; track $index) {
       <div class="card">
@@ -34,7 +45,7 @@
         @for (item of pageList; track $index) {
         <button
           [class.current]="item == currentPage"
-          (click)="showProducts(item, pageSize)"
+          (click)="!isCategoryShown ? showProducts(item, pageSize) : showByCategory(currentCategory, item)"
         >
           {{ item }}
         </button>
