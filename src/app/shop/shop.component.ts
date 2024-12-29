@@ -20,14 +20,14 @@ export class ShopComponent implements OnInit {
 
   public productList: Product[] = [];
   public pageList: number[] = [];
-  public currentPage: number | string = 1;
+  public currentPage: number  = 1;
   public pageSize: any = 15;
   public totalSize!: any;
   public altImage: string =
     'https://media.istockphoto.com/id/1396814518/vector/image-coming-soon-no-photo-no-thumbnail-image-available-vector-illustration.jpg?s=612x612&w=0&k=20&c=hnh2OZgQGhf0b46-J2z7aHbIWwq8HNlSDaNp2wn_iko=';
 
   showProducts(page: number | string = 1, size: number = this.totalSize) {
-    this.currentPage = page;
+    this.currentPage = +page;
     this.prodService
       .getCardsOnShopPage(page, size)
       .subscribe((data: AllProductArea) => {
@@ -39,9 +39,13 @@ export class ShopComponent implements OnInit {
         for (let i = 1; i <= pages; i++) {
           this.pageList.push(i);
         }
-
-        console.log(this.pageList);
       });
+  }
+
+  switchBrands(dataOfBrand: AllProductArea) {
+    this.productList = dataOfBrand.products
+    this.pageList = [1]
+    
   }
 
   changePageSize() {
@@ -49,5 +53,15 @@ export class ShopComponent implements OnInit {
     let pageArea = this.pageSize == '' ? this.totalSize : this.pageSize;
 
     this.showProducts(this.currentPage, pageArea);
+  }
+
+  prevPage() {
+    this.currentPage--
+    this.showProducts(this.currentPage, this.pageSize)
+  }
+
+  nextPage() {
+    this.currentPage++
+    this.showProducts(this.currentPage, this.pageSize)
   }
 }

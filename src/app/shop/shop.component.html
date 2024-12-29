@@ -1,7 +1,10 @@
 <header></header>
 <article>
   <div class="sidebar">
-    <app-sidebar></app-sidebar>
+    <app-sidebar 
+    (sendBrands)="switchBrands($event)"
+    (sendAllProducts)="showProducts(1, pageSize)"
+    ></app-sidebar>
   </div>
   <section class="container">
     <main>
@@ -27,6 +30,7 @@
     <div class="bottomArea">
       <span></span>
       <div class="pages">
+        <button [disabled]="currentPage === 1" (click)="prevPage()" class="arrows">&larr; prev</button>
         @for (item of pageList; track $index) {
         <button
           [class.current]="item == currentPage"
@@ -35,6 +39,7 @@
           {{ item }}
         </button>
         }
+        <button [disabled]="currentPage === pageList.length" (click)="nextPage()" class="arrows"> next &rarr;</button>
       </div>
       <div class="sizePerPage">
         <label for="">Items per Page:</label>

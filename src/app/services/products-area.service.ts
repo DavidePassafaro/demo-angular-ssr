@@ -23,8 +23,8 @@ export class ProductsAreaService {
     return this.http.get("https://api.everrest.educata.dev/shop/products/brands")
   }
 
-  getExactBrandData(name: any) {
-    return this.http.get(`https://api.everrest.educata.dev/shop/products/brand/${name}`)
+  getExactBrandData(name: string) {
+    return this.http.get<AllProductArea>(`https://api.everrest.educata.dev/shop/products/brand/${name}?page_size=10`)
   }
 
   getSearchedData(searchInput: string) {

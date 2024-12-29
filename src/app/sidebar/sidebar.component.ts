@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ProductsAreaService } from '../services/products-area.service';
+import { AllProductArea } from '../../interfaces/all-product-area';
+import { Product } from '../../interfaces/product';
 
 @Component({
     selector: 'app-sidebar',
@@ -9,13 +11,23 @@ import { ProductsAreaService } from '../services/products-area.service';
 })
 export class SidebarComponent implements OnInit {
   constructor(private productApi: ProductsAreaService) {}
+  @Output() sendBrands: EventEmitter<AllProductArea> = new EventEmitter()
+  @Output() sendAllProducts: EventEmitter<AllProductArea> = new EventEmitter()
+
+
   ngOnInit(): void {
     this.getBrandsList()
     this.getCategoriesList()
   }
 
   protected categories:any
-  protected brands: any
+  protected brands: string[] = []
+
+  showAll() {
+    this.productApi.getCardsOnShopPage(1, 15).subscribe((data: AllProductArea) => {
+      this.sendAllProducts.emit(data)
+    })
+  }
 
   getBrandsList() {
     this.productApi.getBrands().subscribe((list:any) => {
@@ -28,6 +40,12 @@ export class SidebarComponent implements OnInit {
     this.productApi.getCategories().subscribe((list:any) => {
       this.categories = list
       
+    })
+  }
+
+  getBrandData(brand: string) {
+    this.productApi.getExactBrandData(brand).subscribe((data: AllProductArea) => {
+      this.sendBrands.emit(data)
     })
   }
 

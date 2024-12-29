@@ -8,6 +8,7 @@ article {
   display: flex;
   gap: 10px;
   z-index: -1;
+  
 }
 
 article .sidebar {
@@ -23,7 +24,7 @@ section {
   width: 100%;
   display: flex;
   flex-direction: column;
-
+  transition: 1s;
   margin: 20px 0;
   gap: 40px;
 }
@@ -175,6 +176,10 @@ section main {
   box-shadow: 0 0 10px 1px #7c2ae6;
 }
 
+.pages button:active {
+  background-color: rgb(3, 226, 255);
+}
+
 .bottomArea {
   display: flex;
   justify-content: space-between;
@@ -208,4 +213,14 @@ section main {
 
 .current:hover {
   box-shadow: 0 0 5px 3px #220067 !important;
+}
+
+
+.arrows {
+  width: 70px !important;
+}
+
+.arrows:disabled {
+  background-color: #4d3c6f !important;
+  box-shadow:  none !important;
 }

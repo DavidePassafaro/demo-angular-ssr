@@ -18,8 +18,9 @@
   <div class="brands">
     <h1>Brands</h1>
     <ul>
+      <li (click)="showAll()"><i class="fa-solid fa-tag"></i>All</li>
       @for (item of brands; track $index) {
-      <li><i class="fa-solid fa-tag"></i>{{ item }}</li>
+      <li (click)="getBrandData(item)"><i class="fa-solid fa-tag"></i>{{ item }}</li>
       }
     </ul>
   </div>
