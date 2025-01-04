@@ -21,17 +21,5 @@ export class ApiAreaService {
     return this.http.get("https://api.everrest.educata.dev/auth")
   }
 
-  createCart(body: any) {
-    return this.http.post("https://api.everrest.educata.dev/shop/cart/product", body)
-  }
-
-  addtoCart(body: any,) {
-    return this.http.patch("https://api.everrest.educata.dev/shop/cart/product", body )
-  }
-
-  
-
-  deleteProduct(body: any) {
-    return this.http.delete("https://api.everrest.educata.dev/shop/cart/product", body)
-  }
+ 
 }

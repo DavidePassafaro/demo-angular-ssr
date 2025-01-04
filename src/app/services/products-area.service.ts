@@ -68,4 +68,23 @@ export class ProductsAreaService {
       `https://api.everrest.educata.dev/shop/products/all?page_index=${page}&page_size=${size}`
     );
   }
+
+
+  createCart(body: any) {
+    return this.http.post("https://api.everrest.educata.dev/shop/cart/product", body)
+  }
+
+  addtoCart(body: any,) {
+    return this.http.patch("https://api.everrest.educata.dev/shop/cart/product", body )
+  }
+
+  
+
+  deleteProduct(body: any) {
+    return this.http.delete("https://api.everrest.educata.dev/shop/cart/product", body)
+  }
+
+  getProductDetailInfo(id: string) {
+    return this.http.get(`https://api.everrest.educata.dev/shop/products/id/${id}`)
+  }
 }
