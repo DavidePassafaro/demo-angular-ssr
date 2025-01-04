@@ -23,6 +23,7 @@ export class DetailsComponent implements OnInit {
   public mainImage!: string;
   public allImages!: string[]
   public starNum!: number;
+  public prodQuant: number = 1
 
   getParam() {
     this.actR.params.subscribe((data: Params) => {
@@ -43,6 +44,14 @@ export class DetailsComponent implements OnInit {
   zoomImg(currImg: string) {
     this.mainImage = currImg
     
+  }
+
+  increase() {
+    this.prodQuant++
+  }
+
+  decrease() {
+    this.prodQuant--
   }
 
 }

@@ -1,3 +1,4 @@
+@if (prodINFO) {
 <section class="container">
   <div class="left">
     <img class="mainImg" [src]="mainImage" alt="" />
@@ -40,7 +41,6 @@
         <h4 style="color: red;"><i class="fa-solid fa-xmark"></i> Not in stock</h4>
     }
     
-    <h5>Warranty: {{prodINFO.warranty}} years</h5>
     <ul>
       <li>Category: {{prodINFO.category.name}}</li>
       <li>Brand: {{prodINFO.brand}}</li>
@@ -55,5 +55,26 @@
       {{prodINFO.description}}
     </p>
   </div>
-  <div class="right"></div>
+  <div class="right">
+    <h2 class="disc">-{{prodINFO.price.discountPercentage}}%</h2>
+    <div class="prices">
+        
+        <h1>{{prodINFO.price.current | currency}}</h1>
+        <h1 class="beforeDisc">{{prodINFO.price.beforeDiscount | currency}}</h1>
+    </div>
+
+    <div class="quantity">
+        <button [disabled]="prodQuant == 1" (click)="decrease()">-</button>
+        <h2>{{prodQuant}}</h2>
+        <button (click)="increase()">+</button>
+    </div>
+    <button class="cartBtn"><i class="fa-solid fa-cart-shopping"></i> Add To cart</button>
+    <div class="line"></div>
+    <div class="delivInfos">
+        <p> <i class="fa-solid fa-truck-fast"></i>Worldwide shipping</p>
+        <p><i class="fa-solid fa-table-cells-row-lock"></i> Secure payment</p>
+        <p><i class="fa-solid fa-calendar-check"></i> {{prodINFO.warranty}} years full warranty</p>
+    </div>
+  </div>
 </section>
+}
