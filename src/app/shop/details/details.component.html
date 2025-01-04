@@ -1,0 +1,59 @@
+<section class="container">
+  <div class="left">
+    <img class="mainImg" [src]="mainImage" alt="" />
+    <div class="otherIMGS">
+      @for (item of allImages; track $index) {
+      <img
+        [class.activeImg]="item === mainImage"
+        (click)="zoomImg(item)"
+        [src]="item"
+        alt=""
+      />
+      }
+    </div>
+  </div>
+  <div class="middle">
+    <h2>
+      {{prodINFO.title}}
+    </h2>
+    <div class="rating">
+        <div class="stars">
+            @if (starNum == 0) {
+                <h5>No Rating</h5>
+            }
+            @else {
+                @for (item of [].constructor(starNum ); track $index) {
+                    <i class="fa-solid fa-star"></i>
+                }
+                <span>{{prodINFO.rating}}</span>
+                
+            }
+
+           
+    </div>
+  
+    </div>
+    @if (prodINFO.stock > 0) {
+        <h4 style="color: green;"><i class="fa-solid fa-check"></i> {{prodINFO.stock}} In stock</h4>
+    }
+    @else { 
+        <h4 style="color: red;"><i class="fa-solid fa-xmark"></i> Not in stock</h4>
+    }
+    
+    <h5>Warranty: {{prodINFO.warranty}} years</h5>
+    <ul>
+      <li>Category: {{prodINFO.category.name}}</li>
+      <li>Brand: {{prodINFO.brand}}</li>
+      <li>Issue Date: {{prodINFO.issueDate | date}}</li>
+    </ul>
+    <div class="desc">
+        <h3>Description</h3>
+        <div class="line"></div>
+    </div>
+    
+    <p>
+      {{prodINFO.description}}
+    </p>
+  </div>
+  <div class="right"></div>
+</section>

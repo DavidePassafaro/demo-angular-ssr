@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { Product } from '../../interfaces/product';
 import { AllProductArea } from '../../interfaces/all-product-area';
 import { FilteredProducts } from '../../interfaces/filtered-products';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-shop',
-  imports: [SidebarComponent, FormsModule],
+  imports: [SidebarComponent, FormsModule, RouterModule],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.css',
 })
