@@ -39,12 +39,14 @@ export class SignInComponent {
         this.errAlert = false;
         this.successLogin = true;
         this.api.profileInfo().subscribe((data: any) => {
-          console.log(data);
-          this.loggedInfo.emit({
+          let userInfo = {
             firstName: data.firstName,
             avatar: data.avatar,
-          });
-          sessionStorage.setItem("logged", "user")
+          };
+
+          this._cookie.set('userInfo', JSON.stringify(userInfo));
+          sessionStorage.setItem('userName', userInfo.firstName);
+          sessionStorage.setItem('userAvatar', userInfo.avatar);
         });
 
         if (this.successLogin) {
@@ -65,7 +67,7 @@ export class SignInComponent {
     this.closeEmit.emit(false);
   }
 
-  everyWhere(event: any) {
+  outSide(event: any) {
     if (event.target.className == 'signArea') {
       this.closeEmit.emit(false);
     }

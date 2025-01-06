@@ -10,9 +10,9 @@
     <button (click)="signInForm()">
       <i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i> Sign in
     </button>
-    } @else {
+    } @else  {
     <button><img [src]="userImg" alt="">{{userName}}</button>
-    <button><i class="fa-solid fa-right-to-bracket"></i> Sign Out</button>
+    <button (click)="signOut()"><i class="fa-solid fa-right-to-bracket"></i> Sign Out</button>
     }
   </div>
 </nav>
