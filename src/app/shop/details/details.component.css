@@ -2,13 +2,13 @@
   font-family: "Signika", serif;
 }
 
-section {
+.detailArea {
   margin-top: 80px;
   display: flex;
   gap: 20px;
 }
 
-section .left {
+.detailArea .left {
   width: 40%;
   height: 600px;
 
@@ -97,14 +97,15 @@ section .left {
   position: absolute;
   width: 100%;
   height: 1px;
-  background-color: #9DA1A7;
+  background-color: #9da1a7;
   top: 50%;
   z-index: -1;
 }
 
 .right {
   width: 26%;
-  box-shadow: 0.4px 1px 6px 0 #9DA1A7;
+  height: 450px;
+  box-shadow: 0.4px 1px 6px 0 #9da1a7;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -185,24 +186,24 @@ section .left {
   box-shadow: 0 0 10px 1px #7c2ae6;
 }
 
-
 .delivInfos {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    color: #9DA1A7;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #9da1a7;
 }
 
 .line {
-    height: 1px;
-    background-color: #F8F8F8;
+  height: 1px;
+  background-color: #f8f8f8;
 }
 
 .delivInfos i {
-    width: 20px;
+  width: 20px;
 }
 
 .delivInfos p {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
+

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiAreaService } from '../services/api-area.service';
 import { HttpHeaders } from '@angular/common/http';
 import { ProductsAreaService } from '../services/products-area.service';
+import { CartAreaService } from '../services/cart-area.service';
 
 @Component({
     selector: 'app-cart',
@@ -10,7 +11,7 @@ import { ProductsAreaService } from '../services/products-area.service';
     styleUrl: './cart.component.css'
 })
 export class CartComponent implements OnInit {
-  constructor(private api: ProductsAreaService) {}
+  constructor(private api: CartAreaService) {}
   ngOnInit(): void {
     // this.createCart()
     // this.getCart()

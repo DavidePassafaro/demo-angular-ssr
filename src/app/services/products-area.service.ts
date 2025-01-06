@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AllProductArea } from '../../interfaces/all-product-area';
 import { FilteredProducts } from '../../interfaces/filtered-products';
+import { Product } from '../../interfaces/product';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,7 @@ export class ProductsAreaService {
   }
 
   getListByCategory(id: any, page: any, size: any) {
-    return this.http.get(
+    return this.http.get<AllProductArea>(
       `https://api.everrest.educata.dev/shop/products/category/${id}?page_index=${page}&page_size=${size}`
     );
   }
@@ -69,22 +70,9 @@ export class ProductsAreaService {
     );
   }
 
-
-  createCart(body: any) {
-    return this.http.post("https://api.everrest.educata.dev/shop/cart/product", body)
-  }
-
-  addtoCart(body: any,) {
-    return this.http.patch("https://api.everrest.educata.dev/shop/cart/product", body )
-  }
-
-  
-
-  deleteProduct(body: any) {
-    return this.http.delete("https://api.everrest.educata.dev/shop/cart/product", body)
-  }
-
   getProductDetailInfo(id: string) {
-    return this.http.get(`https://api.everrest.educata.dev/shop/products/id/${id}`)
+    return this.http.get<Product>(
+      `https://api.everrest.educata.dev/shop/products/id/${id}`
+    );
   }
 }
