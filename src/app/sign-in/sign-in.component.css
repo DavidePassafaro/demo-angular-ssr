@@ -18,6 +18,7 @@
     width: 50%;
     background-color: white;
     position: relative;
+    animation: smoothSlide 1s 1 forwards ease-in-out;
 }
 
 .fa-x {

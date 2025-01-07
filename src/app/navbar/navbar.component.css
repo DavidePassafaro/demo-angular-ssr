@@ -3,13 +3,13 @@ nav {
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    /* box-shadow:  0 0px 25px -4px rgb(229, 227, 227); */
     padding-inline: 30px;
     position: fixed;
     top: 0;
     width: 100%;
     backdrop-filter: brightness(90%) blur(5px);
     transition: 0.5s;
+    z-index: 999999;
 }
 
 .navbarSolid {
@@ -19,7 +19,6 @@ nav {
 }
 
 nav h1 {
-    /*  */
     font-family: "Ga Maamli", sans-serif;
     font-weight: 500;
     letter-spacing: 0.5px;

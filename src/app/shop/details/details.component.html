@@ -68,7 +68,7 @@
       <h2>{{ prodQuant }}</h2>
       <button (click)="increase()">+</button>
     </div>
-    <button class="cartBtn">
+    <button (click)="cartBTN()" class="cartBtn">
       <i class="fa-solid fa-cart-shopping"></i> Add To cart
     </button>
     <div class="line"></div>
@@ -91,3 +91,6 @@
 ></app-related-prods>
 
 }
+
+
+<app-sign-err></app-sign-err>

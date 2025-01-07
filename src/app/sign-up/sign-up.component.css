@@ -17,6 +17,7 @@ form {
     padding: 30px;
     border-radius: 5px;
     position: relative;
+    animation: smoothSlide 1s 1 forwards ease-in-out;
 }
 small {
     position: absolute;

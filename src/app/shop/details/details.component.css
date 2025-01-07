@@ -103,6 +103,8 @@
 }
 
 .right {
+  position: sticky !important;
+  top: 70px;
   width: 26%;
   height: 450px;
   box-shadow: 0.4px 1px 6px 0 #9da1a7;

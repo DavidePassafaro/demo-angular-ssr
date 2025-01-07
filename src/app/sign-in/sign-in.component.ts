@@ -47,6 +47,7 @@ export class SignInComponent {
           this._cookie.set('userInfo', JSON.stringify(userInfo));
           sessionStorage.setItem('userName', userInfo.firstName);
           sessionStorage.setItem('userAvatar', userInfo.avatar);
+          this._cookie.set("cartInfo", data.cartID)
         });
 
         if (this.successLogin) {

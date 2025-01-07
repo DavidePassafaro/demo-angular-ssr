@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { ScrollingDirective } from '../../directives/scrolling.directive';
 import { RouterModule } from '@angular/router';
 import { SsrCookieService } from 'ngx-cookie-service-ssr';
+import { ToolsService } from '../services/tools.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,9 +14,15 @@ import { SsrCookieService } from 'ngx-cookie-service-ssr';
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent implements OnInit {
-  constructor(private _cookie: SsrCookieService) {}
+  constructor(private _cookie: SsrCookieService, private tools: ToolsService) {}
   ngOnInit(): void {
     this.isLoggedIn = this.userName ? true : false;
+    this.tools.isSignedIn.subscribe((info: boolean) => {
+      this.isSignShow = info
+    })
+    this.tools.isRegistered.subscribe((info: boolean) => {
+      this.isRegisterShow = info
+    })
   }
 
   public isSignShow: boolean = false;
@@ -26,7 +33,7 @@ export class NavbarComponent implements OnInit {
   public user: any;
 
   signInForm() {
-    this.isSignShow = true;
+    this.tools.isSignedIn.next(true)
   }
 
   signOut() {
@@ -35,8 +42,8 @@ export class NavbarComponent implements OnInit {
     this.isLoggedIn = false;
   }
   showRegister() {
-    this.isSignShow = false;
-    this.isRegisterShow = true;
+    this.tools.isSignedIn.next(false)
+    this.tools.isRegistered.next(true)
   }
 
   closeForm(close: boolean) {
