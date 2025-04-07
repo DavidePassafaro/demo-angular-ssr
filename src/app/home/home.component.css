@@ -62,6 +62,7 @@ main {
     flex-direction: column;
     gap: 40px;
     align-items: start;
+    padding-left: 30px;
 }
 
 .infos h1 {
