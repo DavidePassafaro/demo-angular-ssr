@@ -1,5 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { afterNextRender, Component, OnInit } from '@angular/core';
 import { ApiAreaService } from '../services/api-area.service';
 
 @Component({
@@ -9,7 +9,14 @@ import { ApiAreaService } from '../services/api-area.service';
   styleUrl: './profile-page.component.css',
 })
 export class ProfilePageComponent implements OnInit {
-  constructor(private api: ApiAreaService) {}
+  private sessionStorage: any;
+
+  constructor(private api: ApiAreaService) {
+    afterNextRender(() => {
+      this.sessionStorage = sessionStorage;
+    });
+  }
+
   ngOnInit(): void {
     this.getProfileData();
   }
@@ -21,7 +28,7 @@ export class ProfilePageComponent implements OnInit {
       next: (data: any) => {
         console.log(data);
         this.userId = data._id;
-        sessionStorage.setItem('userId', this.userId);
+        this.sessionStorage.setItem('userId', this.userId);
       },
     });
   }
