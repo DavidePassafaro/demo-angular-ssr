@@ -1,10 +1,8 @@
 section {
     
     height: 550px;
-    background-image: url("/online-clothing-shopping.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("/online-clothing-shopping.webp");
     background-size: cover;
-    background-attachment: fixed;
-    background-position: 0 -150px;
    
    
 }
