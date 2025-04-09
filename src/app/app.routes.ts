@@ -5,11 +5,35 @@ import { CartComponent } from './cart/cart.component';
 import { ShopComponent } from './shop/shop.component';
 import { DetailsComponent } from './shop/details/details.component';
 
-
 export const routes: Routes = [
-    {path: "", component: HomeComponent},
-    {path: "profile", component: ProfilePageComponent},
-    {path: "cart", component: CartComponent},
-    {path: "shop", component: ShopComponent},
-    {path: "details/:id", component: DetailsComponent}
+  {
+    path: 'home',
+    loadComponent: () =>
+      import('./home/home.component').then((m) => m.HomeComponent),
+  },
+  {
+    path: 'profile',
+    loadComponent: () =>
+      import('./profile-page/profile-page.component').then(
+        (m) => m.ProfilePageComponent
+      ),
+  },
+  {
+    path: 'cart',
+    loadComponent: () =>
+      import('./cart/cart.component').then((m) => m.CartComponent),
+  },
+  {
+    path: 'shop',
+    loadComponent: () =>
+      import('./shop/shop.component').then((m) => m.ShopComponent),
+  },
+  {
+    path: 'details/:id',
+    loadComponent: () =>
+      import('./shop/details/details.component').then(
+        (m) => m.DetailsComponent
+      ),
+  },
+  { path: '**', redirectTo: 'home' }, // Redirect to home for any unknown routes
 ];
