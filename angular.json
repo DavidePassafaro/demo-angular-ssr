@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "onlineShopping": {
+    "demoSSR": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/online-shopping",
+            "outputPath": "dist/demo-ssr",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "onlineShopping:build:production"
+              "buildTarget": "demoSSR:build:production"
             },
             "development": {
-              "buildTarget": "onlineShopping:build:development"
+              "buildTarget": "demoSSR:build:development"
             }
           },
           "defaultConfiguration": "development"
