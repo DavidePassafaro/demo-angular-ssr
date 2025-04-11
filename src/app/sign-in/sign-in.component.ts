@@ -1,4 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  afterNextRender,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -15,11 +20,18 @@ import { SsrCookieService } from 'ngx-cookie-service-ssr';
   styleUrl: './sign-in.component.css',
 })
 export class SignInComponent {
-  constructor(private api: ApiAreaService, public _cookie: SsrCookieService) {}
+  constructor(private api: ApiAreaService, public _cookie: SsrCookieService) {
+    afterNextRender(() => {
+      this.sessionStorage = sessionStorage;
+    });
+  }
+
   @Output() closeEmit: EventEmitter<boolean> = new EventEmitter();
   @Output() changeEmit: EventEmitter<boolean> = new EventEmitter();
   @Output() loggedEmit: EventEmitter<boolean> = new EventEmitter();
   @Output() loggedInfo: EventEmitter<any> = new EventEmitter();
+
+  private sessionStorage: any;
 
   public accessToken: any;
   public errorSMS: string | undefined;
@@ -45,9 +57,9 @@ export class SignInComponent {
           };
 
           this._cookie.set('userInfo', JSON.stringify(userInfo));
-          sessionStorage.setItem('userName', userInfo.firstName);
-          sessionStorage.setItem('userAvatar', userInfo.avatar);
-          this._cookie.set("cartInfo", data.cartID)
+          this.sessionStorage.setItem('userName', userInfo.firstName);
+          this.sessionStorage.setItem('userAvatar', userInfo.avatar);
+          this._cookie.set('cartInfo', data.cartID);
         });
 
         if (this.successLogin) {
