@@ -1,5 +1,5 @@
 {
-  "name": "online-shopping",
+  "name": "demo-ssr",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "http-server": "http-server -p 8080 dist/online-shopping/browser"
+    "http-server": "http-server -p 8080 dist/demo-ssr/browser"
   },
   "private": true,
   "dependencies": {
